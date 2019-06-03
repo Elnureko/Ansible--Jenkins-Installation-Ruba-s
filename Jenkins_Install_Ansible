@@ -38,8 +38,8 @@
     - name: Get the init password Jenkins
       shell: cat /var/lib/jenkins/secrets/initialAdminPassword
       changed_when: false
-      register: result
+      register: password
 
     - name: Print init password Jenkins
       debug:
-        var: result.stdout
+        var: password.stdout
