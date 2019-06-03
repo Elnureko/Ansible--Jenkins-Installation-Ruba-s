@@ -1,27 +1,27 @@
 #Please refer Readme Document for Detailed Information
 
 ---
-- name: Install Jenkins
+- name: Ansible Playbook for Installing the Open Source Jenkins
   hosts: test
   become: true
   tasks:
-    - name: Install Jenkins Pre-requisites
+    - name: Install the Jenkins Pre-requisites
       yum:
         name:
           - wget
           - java-1.8.0-openjdk
 
-    - name: Download jenkins.repo
+    - name: Download the Open Source jenkins.repo
       get_url:
         url: http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
         dest: /etc/yum.repos.d/jenkins.repo
 
-    - name: Import Jenkins Key
+    - name: Import the  Open Source Jenkins Key
       rpm_key:
         state: present
         key: https://jenkins-ci.org/redhat/jenkins-ci.org.key
 
-    - name: Install Jenkins
+    - name: Install the Jenkins Package
       yum:
         name: jenkins
         state: present
