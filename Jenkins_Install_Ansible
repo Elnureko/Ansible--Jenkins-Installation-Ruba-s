@@ -9,7 +9,7 @@
       yum:
         name:
           - wget
-          - java-1.8.0-openjdk
+          - java-11-openjdk
 
     - name: Download the Open Source jenkins.repo
       get_url:
